@@ -1,4 +1,5 @@
 const fs = require("fs");
+
 // get all users
 const getAllUsers = (req, res) => {
     res.status(200).json({ success: true, data: users });

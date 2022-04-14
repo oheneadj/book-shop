@@ -3,6 +3,7 @@ const express = require("express");
 
 const app = express();
 const userRoute = require("./routes/users.router");
+const bookRoute = require("./routes/books.router");
 
 app.use(express.json());
 
@@ -11,6 +12,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRoute);
+
+app.use('/books', bookRoute);
 
 app.get("/*", (req, res) => {
   res.status(400).sendFile(path.join(__dirname + "pages", "404.html"));
